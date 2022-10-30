@@ -19,8 +19,7 @@ import os; \
 import time; \
 t0 = time.time(); \
 print(time.localtime()); \
-DPT.objects.processDirs(dirs=None, objtype=pyh.RPLSplit, channel=[*range(33,65)], SkipHPC=False, HPCScriptsDir = '/data/src/PyHipp/', SkipLFP=False, SkipHighPass=False, SkipSort=False); \
+DPT.objects.processDirs(dirs=None, objtype=pyh.RPLSplit, channel=[*range(33,65)], SkipHPC=False, HPCScriptsDir='/data/src/PyHipp/', SkipLFP=False, SkipHighPass=False, SkipSort=False); \
 print(time.localtime()); \
 print(time.time()-t0);"
-
 aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:148735483353:awsnotify --message "RPLS2aJobDone"
