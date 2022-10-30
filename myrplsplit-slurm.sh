@@ -11,8 +11,7 @@
 #SBATCH -o rplspl-slurm.%N.%j.out # STDOUT
 #SBATCH -e rplspl-slurm.%N.%j.err # STDERR
 
-
-# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HEREpython -u -c "import PyHipp as pyh; \
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
 python -u -c "import PyHipp as pyh; \
 import DataProcessingTools as DPT; \
 import os; \
@@ -26,6 +25,6 @@ os.chdir('session01'); \
 DPT.objects.processDirs(level='channel', cmd='import PyHipp as pyh; from PyHipp import mountain_batch; mountain_batch.mountain_batch(); from PyHipp import export_mountain_cells; export_mountain_cells.export_mountain_cells();'); \
 print(time.localtime()); \
 print(time.time()-t0);"
-aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:148735483353:awsnotify --message "RPLSplitJobDone"
 
+aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:148735483353:awsnotify --message "RPLSplitJobDone"
 
